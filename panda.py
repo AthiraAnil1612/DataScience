@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import seaborn as  sns
+import pandas as pd
+iris=pd.read_csv("iris.csv")
+print("shape of data set:",iris.shape)
+print("first five rows")
+print(iris.head())
+print("**************")
+print("last five rows")
+print(iris.tail())
+print("size of the data set :",iris.size)
+print("number of samples available for each variety")
+print(iris["variety"].value_counts())
+print("description of the data set")
+print(iris.describe())
+sns.pairplot(iris,hue="variety",kind="scatter",diag_kind="hist" )
+plt.style.use("dark_background")
+sns.displot(iris.sepal_length,bins=10,color="g")
+plt.title("distribution of sepal length",fontsize=10,color="white")
+plt.show()
